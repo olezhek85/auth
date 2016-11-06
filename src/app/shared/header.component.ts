@@ -18,7 +18,7 @@ import {AuthService} from "./auth.service";
                     </ul>
                     <ul class="nav navbar-nav navbar-right" *ngIf="isAuth()">
         
-                        <li><a>Logout</a></li>
+                        <li><a (click)="onLogout()" style="cursor: pointer;">Logout</a></li>
                     </ul>
                 </div><!-- /.container-fluid -->
         
@@ -33,5 +33,9 @@ export class HeaderComponent {
 
   isAuth() {
     return this.authService.isAuthenticated();
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }
