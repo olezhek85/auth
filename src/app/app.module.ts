@@ -9,6 +9,7 @@ import { HeaderComponent } from './shared/header.component';
 import { SigninComponent } from './unprotected/signin.component';
 import { SignupComponent } from './unprotected/signup.component';
 import {routing} from "./app.routes";
+import {AuthService} from "./shared/auth.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import {routing} from "./app.routes";
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
